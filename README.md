@@ -9,10 +9,10 @@ Exibir listagem de posts de usuários consumindo a API "https://jsonplaceholder.
 Exibir detalhes de comentários do post selecionado pelo usuário.<br/>
 Caminho da api para comentários: "https://jsonplaceholder.typicode.com/posts/{post_id}/comments"
 
-## DIFERENCIAIS:
+## OBRIGATORIEDADES:
 Boas práticas com padrões em desenvolvimento de software.<br/>
-Conhecimento em consumo de APIs (REST).<br/>
-Arquitetura preferencial - MVP (model-view-presenter) ou semelhante<br/>
+Conhecimento em consumo de APIs (REST) - Retrofit2(preferencial) ou Google Volley.<br/>
+Arquitetura - MVP (preferencial) ou semelhante<br/>
 Utilizar Kotlin language<br/>
 Domínio em técnicas do Google Material Design<br/>
 Seguir como exemplos de UI e conteúdo no diretório /class project<br/>
