@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Posts API</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="posts_recent">Postagens Recentes</string>
+    <string name="posts_comment">O que a galera comentou sobre \n %1$s</string>
+    <string name="internet_error">Você está sem internet, por favor tente quando voltar a internet!</string>
+
 </resources>
