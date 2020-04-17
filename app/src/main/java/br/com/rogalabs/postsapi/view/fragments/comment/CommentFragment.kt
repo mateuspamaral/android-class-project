@@ -35,7 +35,9 @@ class CommentFragment : DialogFragment(), CommentContract.CommentView {
         if (dialog != null) {
             val width = ViewGroup.LayoutParams.MATCH_PARENT
             val height = ViewGroup.LayoutParams.MATCH_PARENT
-            dialog.window.setLayout(width, height)
+            with(dialog) {
+                window?.run { setLayout(width, height) }
+            }
         }
     }
 
@@ -70,6 +72,7 @@ class CommentFragment : DialogFragment(), CommentContract.CommentView {
     }
 
     private fun onCommentItemClick(comment: Comment) {
+        Toast.makeText(context,comment.name,Toast.LENGTH_SHORT).show()
 
     }
 
