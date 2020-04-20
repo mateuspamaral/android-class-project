@@ -1,5 +1,7 @@
 package br.com.rogalabs.postsapi.interfaces
 
+import br.com.rogalabs.postsapi.model.PostModel
+
 interface OnPostListInteractionListener {
-    fun onListClick(postId: Int)
+    fun onListClick(postModel: PostModel)
 }

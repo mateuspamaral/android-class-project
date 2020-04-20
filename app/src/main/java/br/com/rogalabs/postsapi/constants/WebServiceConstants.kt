@@ -2,7 +2,7 @@ package br.com.rogalabs.postsapi.constants
 
 class WebServiceConstants {
     companion object{
-        val POSTS_URL = "https://jsonplaceholder.typicode.com/"
-        val COMMENTS_URL = "https://jsonplaceholder.typicode.com/posts/{post_id}/comments"
+        val BASE_URL_POST = "https://jsonplaceholder.typicode.com/"
+        val BASE_URL_COMMENTS = "https://jsonplaceholder.typicode.com/posts/"
     }
 }

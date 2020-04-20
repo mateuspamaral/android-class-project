@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="br.com.rogalabs.postsapi.views.MainActivity" android:screenOrientation="sensor"
-            android:label="@string/main_name" android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:label="@string/posts" android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
