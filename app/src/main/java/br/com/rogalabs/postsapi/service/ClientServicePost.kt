@@ -1,6 +1,7 @@
 package br.com.rogalabs.postsapi.service
 
-import br.com.rogalabs.postsapi.constants.WebServiceConstants
+import br.com.rogalabs.postsapi.constants.WebServiceConstants.Companion.BASE_URL_POST
+import br.com.rogalabs.postsapi.constants.WebServiceConstants.Companion.DATE_FORMAT
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,10 +15,10 @@ class ClientServicePost {
 
             if (postService == null) {
                 val gson = GsonBuilder()
-                    .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+                    .setDateFormat(DATE_FORMAT)
                     .create()
                 val retrofit = Retrofit.Builder()
-                    .baseUrl(WebServiceConstants.BASE_URL_POST)
+                    .baseUrl(BASE_URL_POST)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build()
                 postService = retrofit.create<PostService>(PostService::class.java)

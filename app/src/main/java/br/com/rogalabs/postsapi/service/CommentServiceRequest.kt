@@ -1,11 +1,13 @@
 package br.com.rogalabs.postsapi.service
 
+import android.content.res.Resources
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.JsonArray
 import com.google.gson.reflect.TypeToken
 import br.com.rogalabs.postsapi.model.CommentModel
 import br.com.rogalabs.postsapi.util.JsonUtil
+import com.manoelh.postsapiandroid.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,13 +35,13 @@ class CommentServiceRequest {
                     commentsArray = JsonUtil.getListFromJson(teamString, listType)
                     comments.postValue(commentsArray)
                 } catch (e: Exception) {
-                    Log.d(TAG, "There is an error")
+                    Log.d(TAG, Resources.getSystem().getString(R.string.error))
                     e.printStackTrace()
                 }
             }
 
             override fun onFailure(call: Call<JsonArray?>?, t: Throwable) {
-                Log.d("onFailure", t.toString())
+                Log.d(TAG, t.toString())
                 comments.postValue(null)
             }
         })
