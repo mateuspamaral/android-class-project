@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Posts API</string>
+    //APP NAME
+    <string name="app_name">Posts api android</string>
+
+    //TOOLBAR
+    <string name="posts">Postagens Recentes</string>
+    <string name="comments">Comentários sobre:</string>
+
+    //DEFAULT NAMES
+    <string name="title_text_view">Title</string>
+    <string name="body_text_view">body</string>
+    <string name="name_text_view">name</string>
+    <string name="email_text_view">email</string>
+
+    //ERROR MESSAGES
+    <string name="response_unsuccessful">An Error occurred during the request</string>
+    <string name="error">"There is an error"</string>
 </resources>
