@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/postsListFragment">
+
     <fragment
         android:id="@+id/postsListFragment"
-        android:name="br.com.rogalabs.postsapi.PostsListFragment"
-        android:label="PostsListFragment" />
+        android:name="br.com.rogalabs.postsapi.post.PostListFragment"
+        android:label="PostsListFragment"
+        tools:layout="@layout/fragment_posts_list">
+        <action
+            android:id="@+id/action_showDetail"
+            app:destination="@id/postDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="br.com.rogalabs.postsapi.comment.PostDetailFragment"
+        android:label="fragment_post_comments"
+        tools:layout="@layout/fragment_post_comments">
+        <argument
+            android:name="selectedPost"
+            app:argType="br.com.rogalabs.postsapi.network.Post" />
+    </fragment>
 </navigation>
