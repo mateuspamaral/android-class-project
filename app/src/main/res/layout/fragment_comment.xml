@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
-        android:text="O que a galera comentou sobre @{}"
+        android:text="@string/comment_title"
         style="@style/Toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,8 +21,11 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/app_margin"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:itemCount="16"
+        tools:listitem="@layout/list_item_comment"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
