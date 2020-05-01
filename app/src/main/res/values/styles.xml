@@ -1,13 +1,22 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">#313131</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textSize">@dimen/text_size</item>
     </style>
 
-    <style name="Tittle" parent="AppTheme">
-        <item name="android:textStyle">bold</item>
+    <style name="Toolbar" parent="AppTheme">
+        <item name="android:textColor">@color/color_toolbar_text</item>
         <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:minHeight">@dimen/toolbar_size</item>
+        <item name="android:background">@color/color_primary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PostTittle" parent="AppTheme">
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

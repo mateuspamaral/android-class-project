@@ -4,4 +4,5 @@
     <dimen name="app_margin">16dp</dimen>
     <dimen name="title_size">20sp</dimen>
     <dimen name="text_size">16sp</dimen>
+    <dimen name="toolbar_size">56dp</dimen>
 </resources>
