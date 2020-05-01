@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import br.com.rogalabs.postsapi.databinding.FragmentPostsListBinding
+import br.com.rogalabs.postsapi.databinding.FragmentPostListBinding
 
 class PostListFragment : Fragment() {
 
@@ -18,7 +18,7 @@ class PostListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val binding = FragmentPostsListBinding.inflate(inflater)
+        val binding = FragmentPostListBinding.inflate(inflater)
 
         binding.lifecycleOwner = this
 
@@ -30,9 +30,7 @@ class PostListFragment : Fragment() {
 
         viewModel.navigateToSelectedPost.observe(viewLifecycleOwner, Observer {
             if ( null != it ) {
-                // Must find the NavController from the Fragment
-                this.findNavController()
-                // Tell the ViewModel we've made the navigate call to prevent multiple navigation
+                this.findNavController().navigate(PostListFragmentDirections.actionShowDetail(it))
                 viewModel.displayPostDetailsComplete()
             }
         })
