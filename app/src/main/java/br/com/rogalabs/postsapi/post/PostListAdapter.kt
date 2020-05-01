@@ -5,13 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import br.com.rogalabs.postsapi.databinding.ListViewPostBinding
+import br.com.rogalabs.postsapi.databinding.ListItemPostBinding
 import br.com.rogalabs.postsapi.network.Post
 
-class PostListAdapter(val onClickListener: OnClickListener) :
+class PostListAdapter(private val onClickListener: OnClickListener) :
         ListAdapter<Post, PostListAdapter.PostViewHolder>(DiffCallback) {
 
-    class PostViewHolder(private var binding: ListViewPostBinding):
+    class PostViewHolder(private var binding: ListItemPostBinding):
             RecyclerView.ViewHolder(binding.root) {
         fun bind(post: Post) {
             binding.postVariable = post
@@ -32,7 +32,7 @@ class PostListAdapter(val onClickListener: OnClickListener) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
-        return PostViewHolder(ListViewPostBinding.inflate(LayoutInflater.from(parent.context)))
+        return PostViewHolder(ListItemPostBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
