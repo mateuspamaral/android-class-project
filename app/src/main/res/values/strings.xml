@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Posts API</string>
     <string name="toolbar_title">Postagens Recentes</string>
+    <string name="comment_title">O que a galera comentou sobre @{post_title}</string>
 </resources>
