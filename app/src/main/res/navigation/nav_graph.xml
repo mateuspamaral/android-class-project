@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/postsListFragment">
+    app:startDestination="@id/postListFragment">
 
     <fragment
-        android:id="@+id/postsListFragment"
+        android:id="@+id/postListFragment"
         android:name="br.com.rogalabs.postsapi.post.PostListFragment"
-        android:label="PostsListFragment"
-        tools:layout="@layout/fragment_posts_list">
+        android:label="fragment_post_list"
+        tools:layout="@layout/fragment_post_list">
         <action
             android:id="@+id/action_showDetail"
             app:destination="@id/postDetailFragment" />
@@ -17,9 +17,9 @@
 
     <fragment
         android:id="@+id/postDetailFragment"
-        android:name="br.com.rogalabs.postsapi.comment.PostDetailFragment"
-        android:label="fragment_post_comments"
-        tools:layout="@layout/fragment_post_comments">
+        android:name="br.com.rogalabs.postsapi.comment.CommentFragment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment">
         <argument
             android:name="selectedPost"
             app:argType="br.com.rogalabs.postsapi.network.Post" />
