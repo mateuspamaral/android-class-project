@@ -19,7 +19,7 @@ enum class CommentApiStatus { LOADING, ERROR, DONE }
 class CommentViewModel(post: Post, app: Application) : AndroidViewModel(app) {
     private val _selectedPost = MutableLiveData<Post>()
 
-    val selectedPost: LiveData<Post>
+    private val selectedPost: LiveData<Post>
         get() = _selectedPost
 
     private val _status = MutableLiveData<CommentApiStatus>()

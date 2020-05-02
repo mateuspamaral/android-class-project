@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:listData="@{viewModel.post}"
+            app:listPost="@{viewModel.post}"
             tools:itemCount="16"
             tools:listitem="@layout/list_item_post"/>
 
@@ -35,6 +35,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:postsApiStatus="@{viewModel.status}"/>
+            app:postApiStatus="@{viewModel.status}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

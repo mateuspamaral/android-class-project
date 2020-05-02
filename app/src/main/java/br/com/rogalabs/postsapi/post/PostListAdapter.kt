@@ -15,8 +15,6 @@ class PostListAdapter(private val onClickListener: OnClickListener) :
             RecyclerView.ViewHolder(binding.root) {
         fun bind(post: Post) {
             binding.postVariable = post
-            // Isso é importante, pois força o binding a executar imediatamente,
-            // o que possibilita o RecyclerView fazer ajustes de tamanho corretamente
             binding.executePendingBindings()
         }
     }
