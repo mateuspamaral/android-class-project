@@ -67,8 +67,8 @@ class PostsViewModel : ViewModel() {
         viewModelJob.cancel()
     }
 
-    fun displayPostDetails(marsProperty: Post) {
-        _navigateToSelectedPost.value = marsProperty
+    fun displayPostDetails(post: Post) {
+        _navigateToSelectedPost.value = post
     }
 
     fun displayPostDetailsComplete() {
