@@ -1,18 +1,14 @@
 package br.com.rogalabs.postsapi.comment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import br.com.rogalabs.postsapi.databinding.FragmentCommentBinding
 
-class CommentFragment : Fragment() {
-
-    private val viewModel: CommentViewModel by lazy {
-        ViewModelProvider(this).get(CommentViewModel::class.java)
-    }
+class CommentFragment : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

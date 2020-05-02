@@ -3,6 +3,7 @@
         <item name="colorPrimary">@color/color_primary</item>
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:dialogTheme">@style/DialogTheme</item>
     </style>
 
     <style name="TitleBar" parent="AppTheme">
@@ -20,4 +21,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="DialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
 </resources>

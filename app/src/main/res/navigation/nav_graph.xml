@@ -15,7 +15,7 @@
             app:destination="@id/postDetailFragment" />
     </fragment>
 
-    <fragment
+    <dialog
         android:id="@+id/postDetailFragment"
         android:name="br.com.rogalabs.postsapi.comment.CommentFragment"
         android:label="fragment_comment"
@@ -23,5 +23,5 @@
         <argument
             android:name="selectedPost"
             app:argType="br.com.rogalabs.postsapi.network.Post" />
-    </fragment>
+    </dialog>
 </navigation>
