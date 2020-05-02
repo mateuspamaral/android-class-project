@@ -2,7 +2,9 @@
 <resources>
     <dimen name="post_padding">8dp</dimen>
     <dimen name="app_margin">16dp</dimen>
+    <dimen name="app_padding">16dp</dimen>
     <dimen name="title_size">20sp</dimen>
     <dimen name="text_size">16sp</dimen>
-    <dimen name="toolbar_size">56dp</dimen>
+    <dimen name="titlebar_size">56dp</dimen>
+    <dimen name="view_spacing">16dp</dimen>
 </resources>

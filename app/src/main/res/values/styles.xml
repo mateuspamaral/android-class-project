@@ -5,13 +5,14 @@
         <item name="android:textSize">@dimen/text_size</item>
     </style>
 
-    <style name="Toolbar" parent="AppTheme">
+    <style name="TitleBar" parent="AppTheme">
         <item name="android:textColor">@color/color_toolbar_text</item>
         <item name="android:textSize">@dimen/title_size</item>
-        <item name="android:minHeight">@dimen/toolbar_size</item>
+        <item name="android:minHeight">@dimen/titlebar_size</item>
         <item name="android:background">@color/color_primary</item>
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:padding">@dimen/app_padding</item>
     </style>
 
     <style name="PostTittle" parent="AppTheme">

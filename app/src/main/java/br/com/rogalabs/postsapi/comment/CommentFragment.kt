@@ -25,6 +25,8 @@ class CommentFragment : Fragment() {
         binding.viewModel = ViewModelProvider(
                 this, viewModelFactory).get(CommentViewModel::class.java)
 
+        binding.commentList.adapter = CommentAdapter()
+
         return binding.root
     }
 
