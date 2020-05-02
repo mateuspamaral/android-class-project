@@ -19,11 +19,8 @@ class PostListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentPostListBinding.inflate(inflater)
-
         binding.lifecycleOwner = this
-
         binding.viewModel = viewModel
-
         binding.postsList.adapter = PostListAdapter(PostListAdapter.OnClickListener {
             viewModel.displayPostDetails(it)
         })
