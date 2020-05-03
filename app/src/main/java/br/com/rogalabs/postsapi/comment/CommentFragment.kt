@@ -8,6 +8,12 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import br.com.rogalabs.postsapi.databinding.FragmentCommentBinding
 
+/**
+ * This [DialogFragment] shows the detailed information about a selected piece of Mars real estate.
+ * It sets this information in the [CommentViewModel], which it gets as a Parcelable property
+ * through Jetpack Navigation's SafeArgs.
+ */
+
 class CommentFragment : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
