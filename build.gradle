@@ -12,6 +12,8 @@ buildscript {
         version_kotlin_coroutines = "1.1.0"
         version_lifecycle_extensions = "2.2.0"
         version_navigation_safe_args = "1.0.0"
+        version_room = "2.2.5"
+        version_work = "1.0.1"
     }
 
     repositories {
