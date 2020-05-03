@@ -13,40 +13,51 @@ import java.lang.Exception
 
 enum class PostApiStatus { LOADING, ERROR, DONE }
 
+/**
+ * The [ViewModel] that is attached to the [PostListFragment].
+ */
 class PostsViewModel : ViewModel() {
 
-    // Variável interna que guarda o valor da requisição mais atual
+    // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<PostApiStatus>()
 
-    // Variável externa da requisição
+    // The external immutable LiveData for the request status
     val status: LiveData<PostApiStatus>
         get() = _status
 
-    // Pegando a lista de post externos que podem ser alterados
+    // Internally, we use a MutableLiveData, because we will be updating the List of Post
+    // with new values
     private val _posts = MutableLiveData<List<Post>>()
 
-    // Dados não alteráveis
+    // The external LiveData interface to the post is immutable, so only this class can modify
     val post: LiveData<List<Post>>
         get() = _posts
 
-    // Internamente vamos usar MutableLiveData para abrir o post selecionado
+    // Internally, we use a MutableLiveData to handle navigation to the selected post
     private val _navigateToSelectedPost = MutableLiveData<Post>()
 
-    // Os dados do post que não são mutáveis
+    // The external immutable LiveData for the navigation post
     val navigateToSelectedPost: LiveData<Post>
         get() = _navigateToSelectedPost
 
-    // Criado uma Coroutine para que possa ser cancelado posteriormente
+    // Create a Coroutine scope using a job to be able to cancel when needed
     private var viewModelJob = Job()
 
-    // Criado escopo da Coroutine e apontado para o dispatcher principal
+    // the Coroutine runs using the Main (UI) dispatcher
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
-    // Chamado getPosts aqui para obter o status assim que o ViewModel for iniciado
+    /**
+     * Call getPosts() on init so we can display status immediately.
+     */
     init {
         getPosts()
     }
 
+    /**
+     * Gets Post information from the Post API Retrofit service and
+     * updates the [Post] [List] and [PostApiStatus] [LiveData]. The Retrofit service
+     * returns a coroutine Deferred, which we await to get the result of the transaction.
+     */
     private fun getPosts() {
         coroutineScope.launch {
             var getPostsDeferred = PostApi.retrofitService.getPostsAsync()
@@ -62,15 +73,26 @@ class PostsViewModel : ViewModel() {
         }
     }
 
+    /**
+     * When the [ViewModel] is finished, we cancel our coroutine [viewModelJob], which tells the
+     * Retrofit service to stop.
+     */
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
     }
 
+    /**
+     * When the post is clicked, set the [_navigateToSelectedPost] [MutableLiveData]
+     * @param post The [Post] that was clicked on.
+     */
     fun displayPostDetails(post: Post) {
         _navigateToSelectedPost.value = post
     }
 
+    /**
+     * After the navigation has taken place, make sure _navigateToSelectedPost is set to null
+     */
     fun displayPostDetailsComplete() {
         _navigateToSelectedPost.value = null
     }

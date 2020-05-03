@@ -9,50 +9,46 @@
             type="br.com.rogalabs.postsapi.comment.CommentViewModel" />
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/comment_list_background">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        tools:context="br.com.rogalabs.postsapi.MainActivity"
+        android:layout_margin="@dimen/app_margin"
+        android:background="@color/comment_background">
+
+        <TextView
+            android:id="@+id/comment_textview_posttitle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context="br.com.rogalabs.postsapi.MainActivity"
-            android:layout_margin="@dimen/app_margin"
-            android:background="@color/comment_background">
+            android:layout_height="wrap_content"
+            android:background="@color/color_primary"
+            android:text="@{viewModel.displayPostTitle}"
+            style="@style/TitleBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/comment_textview_posttitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_primary"
-                android:text="@{viewModel.displayPostTitle}"
-                style="@style/TitleBar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comment_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_default="wrap"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comment_textview_posttitle"
+            app:listComment="@{viewModel.comments}"
+            tools:itemCount="16"
+            tools:listitem="@layout/list_item_comment"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/comment_list"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/comment_textview_posttitle"
-                app:listComment="@{viewModel.comments}"
-                tools:itemCount="16"
-                tools:listitem="@layout/list_item_comment"/>
-
-            <ImageView
-                android:id="@+id/status_image"
-                android:layout_width="@dimen/icon_size"
-                android:layout_height="@dimen/icon_size"
-                app:commentApiStatus="@{viewModel.status}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </FrameLayout>
+        <ImageView
+            android:id="@+id/status_image"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            app:commentApiStatus="@{viewModel.status}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

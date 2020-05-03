@@ -5,6 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import br.com.rogalabs.postsapi.network.Post
 
+/**
+ * Simple ViewModel factory that provides the MarsProperty and context to the ViewModel.
+ */
+
 class CommentViewModelFactory(
     private val post: Post,
     private val application: Application) : ViewModelProvider.Factory {
