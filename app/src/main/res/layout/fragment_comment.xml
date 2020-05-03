@@ -12,7 +12,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="br.com.rogalabs.postsapi.MainActivity">
+        tools:context="br.com.rogalabs.postsapi.MainActivity"
+        android:layout_margin="@dimen/app_margin"
+        android:background="@color/comment_background">
 
         <TextView
             android:id="@+id/comment_textview_posttitle"
